@@ -14,8 +14,9 @@ between objects)
 send back and forth messages in HTTP
 
 ## Repository
-The mvn package for XML-RPC did not contain the necessary classes and methods, so we had to get the source directly. 
+The mvn package for XML-RPC did not contain the necessary classes and methods, so we had to get the source directly. ([link](https://archive.apache.org/dist/ws/xmlrpc/sources/apache-xmlrpc-3.1.2-src.zip))  
 This also means adding the library directly to the classpath, which makes the repository very messy.  
+
 The library is included here locally, and has to be added through the IDE to the classpath (as a library/module). You then have to fix errors in the libraries, such as missing dependencies or wrong import pointers. Some classes were also built in a Java 6 environment, so they do not fit the requirements of modern java - an example is how all methods should be implemented for the implementation of an abstract class.
 
 - The RPC client can be found at [Client/src/main/java/com/example/xmlrpc/Client.java](https://github.com/Hold-Krykke-BA/DLS/blob/main/XMLRPC/Client/src/main/java/com/example/xmlrpc/Client.java)
@@ -23,3 +24,19 @@ The library is included here locally, and has to be added through the IDE to the
 
 The other files are included for compatibility and because we had to make changes to the local libraries in order for them to work.  
 Some had to be downgraded to Java 6 and others had to have their methods remade (mainly package/dependecy imports) for our build to pass.
+
+## Results
+An example of the process is the following preconditions:
+```java
+int element1 = 200; //added to "params"
+int element2 = 50; //added to "params"
+Object result = client.execute("sample.sum", params);
+```
+
+Which connects to the server and returns the following response:
+
+```
+The sum is: 250
+```
+
+![image](https://user-images.githubusercontent.com/37186286/140659336-a00a7de6-bcab-46c2-819f-55eac9b97524.png)
