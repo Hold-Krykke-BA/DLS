@@ -14,7 +14,7 @@ between objects)
 send back and forth messages in HTTP
 
 ## Repository
-The mvn package for XML-RPC did not contain the necessary classes and methods, so we had to get the source directly. ([link](https://archive.apache.org/dist/ws/xmlrpc/sources/apache-xmlrpc-3.1.2-src.zip))  
+The mvn package for XML-RPC did not contain the necessary classes and methods, so we had to get the source directly, included in [apache-xmlrpc-3.1.2-src](apache-xmlrpc-3.1.2-src). ([external link source](https://archive.apache.org/dist/ws/xmlrpc/sources/apache-xmlrpc-3.1.2-src.zip))  
 This also means adding the library directly to the classpath, which makes the repository very messy.  
 
 The library is included here locally, and has to be added through the IDE to the classpath (as a library/module). You then have to fix errors in the libraries, such as missing dependencies or wrong import pointers. Some classes were also built in a Java 6 environment, so they do not fit the requirements of modern java - an example is how all methods should be implemented for the implementation of an abstract class.
