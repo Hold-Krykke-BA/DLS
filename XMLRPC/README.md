@@ -15,7 +15,8 @@ send back and forth messages in HTTP
 
 ## Repository
 The mvn package for XML-RPC did not contain the necessary classes and methods, so we had to get the source directly. 
-This also means adding the library directly to the classpath and uploading it. The structure is very messy but here are the files of interest:
+This also means adding the library directly to the classpath, which makes the repository very messy.  
+The library is included here locally, and has to be added through the IDE to the classpath (as a library/module). You then have to fix errors in the libraries, such as missing dependencies or wrong import pointers. Some classes were also built in a Java 6 environment, so they do not fit the requirements of modern java - an example is how all methods should be implemented for the implementation of an abstract class.
 
 - The RPC client can be found at [Client/src/main/java/com/example/xmlrpc/Client.java](https://github.com/Hold-Krykke-BA/DLS/blob/main/XMLRPC/Client/src/main/java/com/example/xmlrpc/Client.java)
 - The RPC server can be found at [Server/src/main/java/com/example/server/ServerApplication.java](https://github.com/Hold-Krykke-BA/DLS/blob/main/XMLRPC/Server/src/main/java/com/example/server/ServerApplication.java)
