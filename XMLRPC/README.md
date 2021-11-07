@@ -33,6 +33,8 @@ int element2 = 50; //added to "params"
 Object result = client.execute("sample.sum", params);
 ```
 
+It is worth noting that the "sample.sum" parameter (which matches the receiving classes' method name) does not do anything in this implementation - but is required for implementation.
+
 Which connects to the server and returns the following response:
 
 ```
