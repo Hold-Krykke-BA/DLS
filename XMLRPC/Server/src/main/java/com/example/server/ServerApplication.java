@@ -14,7 +14,6 @@ public class ServerApplication {
         return (x + y);
     }
 
-
     public static void main(String[] args) {
 
         SpringApplication.run(ServerApplication.class, args);
@@ -26,6 +25,7 @@ public class ServerApplication {
 
             server.getXmlRpcServer().setHandlerMapping(new XmlRpcHandlerMapping() {
                 ServerApplication serverApp = new ServerApplication();
+
                 @Override
                 public org.apache.xmlrpc.XmlRpcHandler getHandler(String handlerName) throws XmlRpcNoSuchHandlerException, XmlRpcException {
                     //How to access handlerName the correct way?

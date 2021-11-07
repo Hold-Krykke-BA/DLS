@@ -1,12 +1,9 @@
 package com.example.xmlrpc;
 
 
-//import org.apache.xmlrpc.client.XmlRpcClient;
-import org.apache.xmlrpc.*;
-//import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
-import org.apache.xmlrpc.server.XmlRpcServer;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -29,20 +26,14 @@ public class Client {
             client.setConfig(config);
 
 
-//            XmlRpcServer server = new XmlRpcServer();
-//            server.setConfig(config);
-
-
             Vector params = new Vector();
-            int element1 = 170;
-            int element2 = 15;
-
+            int element1 = 200;
+            int element2 = 50;
 
             params.addElement(element1);
             params.addElement(element2);
-            //org.apache.xmlrpc.common.XmlRpcController
-//            Object result = server.execute("sample.sum");
-            Object result = client.execute("sample.sum",params);
+
+            Object result = client.execute("sample.sum", params);
 
             int sum = ((Integer) result).intValue();
             System.out.println("The sum is: " + sum);
